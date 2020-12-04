@@ -138,7 +138,7 @@ Output: [1,2,3,5]
 ```
 - Time complexity : O(L)
 The algorithm makes one traversal of the list of L nodes. Therefore time complexity is O(L).
-- Space complexity : O(1)O(1).
+- Space complexity : O(1)
 We only used constant extra space.
 
 public ListNode removeNthFromEnd(ListNode head, int n) {
