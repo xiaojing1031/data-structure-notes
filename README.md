@@ -6,9 +6,9 @@
 ### 203. Remove Linked List Elements
 ### 19. Remove Nth Node From End of List
 ### 445. Add Two Numbers II
+-----
 
-
-## [BT && BST]()
+## [BT && BST](https://github.com/xiaojing1031/data-structure-notes/blob/main/BT%20%26%20BST.md#bt--bst)
 ### 144. Binary Tree Preorder Traversal
 ### 94. Binary Tree Inorder Traversal
 ### 145. Binary Tree Postorder Traversal
