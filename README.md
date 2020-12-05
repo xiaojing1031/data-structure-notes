@@ -13,4 +13,6 @@
 - 94. Binary Tree Inorder Traversal
 - 145. Binary Tree Postorder Traversal
 - 102. Binary Tree Level Order Traversal
-- 
+- 104. Maximum Depth of Binary Tree
+- 112. Path Sum
+- 105. Construct Binary Tree from Preorder and Inorder Traversal
