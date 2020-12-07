@@ -182,3 +182,107 @@ private TreeNode helper(int[] pre, int[] in, int val) {
     return root;
 }
 ```
+
+### 116 Populating Next Right Pointers in Each Node
+You are given a perfect binary tree where all leaves are on the same level, and every parent has two children.   
+Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.
+
+- Level Order Traversal (store each node in each level)
+```
+- Time complexity : O(n)
+- Space complexity : O(n) since store the entire tree
+
+public Node connect(Node root) {
+    if (root == null) return null;
+    Queue<Node> queue = new LinkedList();
+    queue.offer(root);
+        
+    while (!queue.isEmpty()) {
+        int size = queue.size();
+        Node pre = new Node(0);
+        for (int i = 0; i < size; i++) {
+            Node node = queue.poll();
+            if (node.left != null) {         
+                pre.next = node.left;
+                pre = node.left;
+                queue.offer(node.left);
+            }
+        
+            if (node.right != null) {
+                pre.next = node.right;
+                pre = node.right;
+                queue.offer(node.right);
+            }
+        }
+    }
+    return root;
+}
+```
+
+- Store left most node in each level
+
+```
+- Time complexity : O(n) since we process each node exactly once.  
+- Space complexity : O(1) since we don't make use of any additional data structure for traversing nodes on a particular level like the previous approach does.
+
+public Node connect(Node root) {
+        if (root == null) return null;
+        Node leftmost = root;
+        
+        while (leftmost.left != null) {
+            Node head = leftmost;
+            while (head != null) {
+                head.left.next = head.right;
+                if (head.next != null) {
+                    head.right.next = head.next.left;
+                }
+                head = head.next;
+            }
+            
+            leftmost = leftmost.left;
+        }
+        
+        return root;
+    }
+
+```
+
+### 117 Populating Next Right Pointers in Each Node II
+Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.  
+Initially, all next pointers are set to NULL.
+
+- Level Order Traversal (store each node in each level)  
+（同116）
+- Store left most node in each level & each child level
+```
+- Time complexity : O(n)
+- Space complexity : O(1)
+
+public Node connect(Node root) {
+    if (root == null) return root;
+        
+    Node firstN = root;
+    while (firstN != null) {
+        Node head = firstN; 
+            
+        Node curFirst = new Node(0);
+        Node cur = curFirst;
+        while (head != null) {
+            if (head.left != null) {
+                cur.next = head.left;
+                cur = cur.next;
+            }
+            if (head.right != null) {
+                cur.next = head.right;
+                cur = cur.next;
+            }
+            head = head.next;
+        }
+        firstN = curFirst.next;
+    }
+    
+    return root;
+}
+```
+
+
