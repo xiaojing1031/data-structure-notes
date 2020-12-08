@@ -253,6 +253,7 @@ Initially, all next pointers are set to NULL.
 
 - Level Order Traversal (store each node in each level)  
 （同116）
+
 - Store left most node in each level & each child level
 ```
 - Time complexity : O(n)
@@ -285,4 +286,42 @@ public Node connect(Node root) {
 }
 ```
 
+### 236 Lowest Common Ancestor of a Binary Tree
+Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.  
+
+- Recursive 
+```
+- Time complexity : O(n)
+- Space complexity : O(n) the worst
+
+private TreeNode ans = null;
+publich TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    helper(root, p, q);
+}
+private boolean helper(TreeNode node, TreeNode p, TreeNode q) {
+    if (node == nul) return false;
+    
+    int left = helper(node.left, p, q) ? 1 : 0;
+    int right = helper(node.right, p, q) ? 1 : 0;
+    int mid = (node == p || node == q) ? 1 : 0;
+    
+    int val = left + right + mid;
+    if (val >= 2) ans = node;
+    
+    return val > 0;
+}
+```
+```
+public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    if (root == null) return null;
+    if (root == p || root == q) return root;
+    TreeNode left = lowestCommonAncestor(root.left, p, q);
+    TreeNode right = lowestCommonAncestor(root.right, p, q);
+        
+    if (left != null && right != null) return root;
+    return left == null ? right : left;
+}
+```
+
+### 314 Binary Tree Vertical Order Traversal
 

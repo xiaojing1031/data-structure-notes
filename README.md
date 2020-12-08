@@ -16,7 +16,11 @@
 - [104 Maximum Depth of Binary Tree](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#104-maximum-depth-of-binary-tree)
 - [112 Path Sum](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#112-path-sum)
 - [105 Construct Binary Tree from Preorder and Inorder Traversal](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#105-construct-binary-tree-from-preorder-and-inorder-traversal)
-- [116 Populating Next Right Pointers in Each Node]()
-- [117 Populating Next Right Pointers in Each Node II]()
+- [116 Populating Next Right Pointers in Each Node](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#116-populating-next-right-pointers-in-each-node)
+- [117 Populating Next Right Pointers in Each Node II](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#117-populating-next-right-pointers-in-each-node-ii)
+
+- [236 Lowest Common Ancestor of a Binary Tree](  )
+
+- [314 Binary Tree Vertical Order Traversal]()
 -----
 
