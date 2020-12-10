@@ -20,7 +20,8 @@
 - [117 Populating Next Right Pointers in Each Node II](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#117-populating-next-right-pointers-in-each-node-ii)
 
 - [236 Lowest Common Ancestor of a Binary Tree](  )
-
 - [314 Binary Tree Vertical Order Traversal]()
+- [987 Vertical Order Traversal of a Binary Tree]()
+- [200 Number of Islands]( )
 -----
 

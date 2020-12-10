@@ -324,4 +324,151 @@ public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 ```
 
 ### 314 Binary Tree Vertical Order Traversal
+Given a binary tree, return the vertical order traversal of its nodes' values. (ie, from top to bottom, column by column).
+
+For each node at position (X), its left and right children respectively will be at positions (X-1) and (X+1).
+
+If two nodes are in the same row and column, the order should be from left to right.
+
+- BFS
+```
+- Time complexity : O(n)
+- Space complexity : O(n) the worst
+
+int left = 0;
+int right = 0;
+List<List<Integer>> lists = new ArrayList();
+public List<List<Integer>> verticalOrder(TreeNode root) {
+    if (root == null) return lists;
+    verticalSize(root, 0);
+    for (int i = left; i <= right; i++) {
+        lists.add(new ArrayList());
+    }
+        
+    Queue<Pair<TreeNode, Integer>> queue = new LinkedList();
+    queue.offer(new Pair<>(root, 0-left));
+    while (!queue.isEmpty()) {
+        Pair pair = queue.poll();
+        TreeNode node = (TreeNode) pair.getKey();
+        int idx = (int) pair.getValue();
+        lists.get(idx).add(node.val);
+        if (node.left != null) {
+            queue.offer(new Pair<>(node.left, idx-1));
+        }
+        if (node.right != null) {
+            queue.offer(new Pair<>(node.right, idx+1));
+        }
+    }
+        
+    return lists;
+}
+    
+private void verticalSize(TreeNode node, int idx) {
+    if (node == null) return;
+       
+    verticalSize(node.left, idx-1);
+    verticalSize(node.right, idx+1);
+    
+    left = Math.min(left, idx);
+    right = Math.max(right, idx);
+}
+
+```
+
+### 987 Vertical Order Traversal of a Binary Tree
+Given a binary tree, return the vertical order traversal of its nodes values.
+For each node at position (X, Y), its left and right children respectively will be at positions (X-1, Y-1) and (X+1, Y-1).
+
+From left to right, top to bottom
+Similar to #314, but If two nodes have the same position, then the value of the node that is reported first is the value that is smaller.
+
+- dfs
+```
+- Time complexity :         
+dfs:O(n),       
+pq: each loop O(logn) & totally n loop -> O(nlogn)
+- Space complexity : pq used to store object of Point -> O(n)
+
+class Point {
+    int x,y, val;
+    Point(int x, int y, int val) {
+        this.x = x;
+        this.y = y;
+        this.val = val;
+    }
+}
+    
+Comparator<Point> cmp = (s1, s2) -> {
+    if (s1.x != s2.x) {
+        return s1.x - s2.x;
+    } else if (s1.y != s2.y) {
+        return s2.y - s1.y;
+    }
+    return s1.val - s2.val;
+}; 
+    
+PriorityQueue<Point> pq = new PriorityQueue<>(cmp);
+public List<List<Integer>> verticalTraversal(TreeNode root) {
+    List<List<Integer>> lists = new ArrayList();
+    if (root == null) return lists;
+        
+    dfs(0, 0, root);
+    int idx = Integer.MAX_VALUE;
+    while (!pq.isEmpty()) {
+        Point point = pq.poll();
+        if (point.x != idx) {
+            lists.add(new ArrayList());
+            idx = point.x;
+        }
+        lists.get(lists.size()-1).add(point.val);
+    }
+    return lists;
+}
+    
+private void dfs(int x, int y, TreeNode node) {
+    if (node == null) return;
+    pq.offer(new Point(x, y, node.val));
+    dfs(x-1, y-1, node.left);
+    dfs(x+1, y-1, node.right);  
+}    
+```
+
+### 200 Number of Islands
+
+- dfs
+```
+- Time complexity : O(rLen*cLen) 
+- Space complexity : wort case O(rLen*cLen)
+
+int result = 0;
+public int numIslands(char[][] grid) {
+    int rLen = grid.length;
+    int cLen = grid[0].length;
+    int result = 0;
+    for (int i = 0; i < rLen; i++) {
+        for (int j = 0; j < cLen; j++) {
+            if (grid[i][j] == '1') {
+                result += 1;
+                dfs(i, j, grid);
+            }
+        }
+    }
+        
+    return result;
+}
+private void dfs(int i, int j, char[][] grid) {
+    int rLen = grid.length;
+    int cLen = grid[0].length;
+        
+    if (i < 0 || i >= rLen || j < 0 || j >= cLen) return;
+    if (grid[i][j] == '0') return;
+    grid[i][j] = '0';
+    dfs(i+1, j, grid);
+    dfs(i, j+1, grid);
+    dfs(i-1, j, grid);
+    dfs(i, j-1, grid);
+}
+```
+
+- bfs
 
