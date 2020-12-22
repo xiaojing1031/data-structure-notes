@@ -472,3 +472,78 @@ private void dfs(int i, int j, char[][] grid) {
 
 - bfs
 
+```
+- Time complexity : O(rLen*cLen) 
+- Space complexity : O(min(M,N)) because in worst case where the grid is filled with lands, the size of queue can grow up to min(M,N).
+
+public int numIslands(char[][] grid) {
+    if (grid == null || grid.length == 0) {
+        return 0;
+    }
+       
+    int row = grid.length;
+    int col = grid[0].length;
+       
+    int result = 0;
+    Queue<Pair<Integer, Integer>> queue = new LinkedList();
+    for (int r = 0; r < row; r++) {
+        for (int c = 0; c < col; c++) {
+            if (grid[r][c] == '1') {
+                grid[r][c] = '0';
+                result++;
+                Pair pair = new Pair(r, c);
+                queue.offer(pair);
+                while (!queue.isEmpty()) {
+                    Pair p = queue.poll();
+                    int i = (int) p.getKey();
+                    int j = (int) p.getValue();
+                       
+                    if (i-1 >= 0  && grid[i-1][j] == '1') {
+                        grid[i-1][j] = '0';
+                        queue.offer(new Pair(i-1, j));
+                    }
+                    if (i+1 < row && grid[i+1][j] == '1') {
+                        grid[i+1][j] = '0';
+                        queue.offer(new Pair(i+1, j));
+                    }
+                    if (j-1 >= 0 && grid[i][j-1] == '1') {
+                        grid[i][j-1] = '0';
+                        queue.offer(new Pair(i, j-1));
+                    }
+                    if (j+1 < col && grid[i][j+1] == '1') {
+                        grid[i][j+1] = '0';
+                        queue.offer(new Pair(i, j+1));
+                    }
+                }
+            }
+        }
+    }
+       
+    return result;
+}
+
+```
+
+### 133 Clone Graph
+Given a reference of a node in a connected undirected graph.  
+Return a deep copy (clone) of the graph.   
+
+Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors.  
+
+- dfs
+```
+private HashMap<Node, Node> visited = new HashMap();
+public Node cloneGraph(Node node) {
+    if (node == null) return node;
+    if (visited.containsKey(node)) {
+        return visited.get(node);
+    }
+    Node cloneNode = new Node(node.val, new ArrayList());
+    visited.put(node, cloneNode);
+    for (Node neighbor : node.neighbors) {
+        cloneNode.neighbors.add(cloneGraph(neighbor));
+    }
+        
+    return cloneNode;
+}
+```
