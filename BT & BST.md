@@ -547,3 +547,24 @@ public Node cloneGraph(Node node) {
     return cloneNode;
 }
 ```
+
+### 98 Validate Binary Search Tree
+Given the root of a binary tree, determine if it is a valid binary search tree (BST).
+
+- Recursive
+```
+- Time complexity : O(n) since we visit each node exactly once
+- Space complexity : O(n) since we keep up to the entire tree
+
+public boolean isValidBST(TreeNode root) {
+    if (root == null) return true;
+    return helper(root, Long.MAX_VALUE, Long.MIN_VALUE);
+}
+    
+private boolean helper(TreeNode node, long max, long min) {
+    if (node == null) return true;
+    if (node.val >= max || node.val <= min) return false;
+    return helper(node.left, node.val, min) 
+        && helper(node.right, max, node.val);
+}
+```
