@@ -612,7 +612,7 @@ public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 }
 ```
 
-- interative
+- Iterative
 ```
 - Time complexity : O(n) 
 - Space complexity : O(1) 

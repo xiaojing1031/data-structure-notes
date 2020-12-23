@@ -13,7 +13,7 @@
 - [94 Binary Tree Inorder Traversal](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#94-binary-tree-inorder-traversal-%E5%A4%9A%E6%80%9D%E8%80%83%E4%B8%80%E4%B8%8B)
     - iterative with stack (类似解法题型) :
         - 230 Kth Smallest Element in a BST
-        - 98 Validate Binary Search Tree
+        - [98 Validate Binary Search Tree](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#98-validate-binary-search-tree)
 - [145 Binary Tree Postorder Traversal](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#145-binary-tree-postorder-traversal-%E6%80%9D%E8%80%83)
 - [102 Binary Tree Level Order Traversal](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#102-binary-tree-level-order-traversal)
 - [104 Maximum Depth of Binary Tree](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#104-maximum-depth-of-binary-tree)
@@ -32,7 +32,7 @@
     - recursive 
     - iterative with stack
 
-- [235 Lowest Common Ancestor of a Binary Search Tree]()
+- [235 Lowest Common Ancestor of a Binary Search Tree](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#235-lowest-common-ancestor-of-a-binary-search-tree)
     - recursive
     - iterative
 -----
