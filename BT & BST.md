@@ -568,3 +568,66 @@ private boolean helper(TreeNode node, long max, long min) {
         && helper(node.right, max, node.val);
 }
 ```
+- Iterative
+```
+- Time complexity : O(n) since we visit each node exactly once
+- Space complexity : O(n) since we keep up to the entire tree
+
+public boolean isValidBST(TreeNode root) {
+    Stack<TreeNode> stack = new Stack();
+    TreeNode pre = null;
+    TreeNode cur = root;
+    while (cur != null || !stack.isEmpty()) {
+        while (cur != null) {
+            stack.push(cur);
+            cur = cur.left;
+        }
+        cur = stack.pop();
+        if (pre != null && cur.val <= pre.val) return false;
+        pre = cur;
+        cur = cur.right;
+    }       
+    return true;
+}
+```
+
+### 235 Lowest Common Ancestor of a Binary Search Tree
+Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
+
+- Recursive
+```
+- Time complexity : O(n) 
+- Space complexity : O(n) 
+
+public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    if (p.val > q.val) return lowestCommonAncestor(root, q, p);
+      
+    if (root.val > p.val && root.val > q.val) {
+        return lowestCommonAncestor(root.left, p, q);
+    }
+    if (root.val < p.val && root.val < q.val) {
+        return lowestCommonAncestor(root.right, p, q);
+    }
+    return root;
+}
+```
+
+- interative
+```
+- Time complexity : O(n) 
+- Space complexity : O(1) 
+
+public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    if (p.val > q.val) return lowestCommonAncestor(root, q, p);
+    TreeNode cur = root;
+    while (cur != null) {
+        int val = cur.val;
+        if (p.val < val && q.val < val) {
+            cur = cur.left;
+        } else if (p.val > val && q.val > val) {
+            cur = cur.right;
+        } else return cur;
+    }
+    return null;
+}
+```

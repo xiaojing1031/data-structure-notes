@@ -11,6 +11,9 @@
 ### [BT && BST](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#bt--bst)
 - [144 Binary Tree Preorder Traversal](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#144-binary-tree-preorder-traversal)
 - [94 Binary Tree Inorder Traversal](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#94-binary-tree-inorder-traversal-%E5%A4%9A%E6%80%9D%E8%80%83%E4%B8%80%E4%B8%8B)
+    - iterative with stack (类似解法题型) :
+        - 230 Kth Smallest Element in a BST
+        - 98 Validate Binary Search Tree
 - [145 Binary Tree Postorder Traversal](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#145-binary-tree-postorder-traversal-%E6%80%9D%E8%80%83)
 - [102 Binary Tree Level Order Traversal](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#102-binary-tree-level-order-traversal)
 - [104 Maximum Depth of Binary Tree](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#104-maximum-depth-of-binary-tree)
@@ -23,5 +26,14 @@
 - [314 Binary Tree Vertical Order Traversal](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#314-binary-tree-vertical-order-traversal)
 - [987 Vertical Order Traversal of a Binary Tree](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#987-vertical-order-traversal-of-a-binary-tree)
 - [200 Number of Islands](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#200-number-of-islands)
+
+- [133 Clone Graph](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#133-clone-graph)
+- [98 Validate Binary Search Tree](https://github.com/xiaojing1031/leetcode-notes/blob/main/BT%20%26%20BST.md#98-validate-binary-search-tree)
+    - recursive 
+    - iterative with stack
+
+- [235 Lowest Common Ancestor of a Binary Search Tree]()
+    - recursive
+    - iterative
 -----
 
